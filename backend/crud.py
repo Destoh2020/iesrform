@@ -77,7 +77,8 @@ def update_application(db: Session, staff_number: str, application: ApplicationC
         raise ValueError(f"Course category mismatch")
     
     # Update fields
-    db_application.applicant_name = application.applicant_name
+    db_application.first_name = application.first_name
+    db_application.last_name = application.last_name
     db_application.designation = application.designation
     db_application.division = application.division
     db_application.course_category = application.course_category

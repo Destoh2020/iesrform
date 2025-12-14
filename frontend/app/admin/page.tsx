@@ -287,7 +287,10 @@ export default function AdminPanel() {
                       Staff #
                     </th>
                     <th className="text-left py-3 px-4 text-gray-600 font-semibold">
-                      Name
+                      First Name
+                    </th>
+                    <th className="text-left py-3 px-4 text-gray-600 font-semibold">
+                      Last Name
                     </th>
                     <th className="text-left py-3 px-4 text-gray-600 font-semibold">
                       Email
@@ -323,7 +326,10 @@ export default function AdminPanel() {
                         {app.staff_number}
                       </td>
                       <td className="py-3 px-4 text-gray-900">
-                        {app.first_name} {app.last_name}
+                        {app.first_name}
+                      </td>
+                      <td className="py-3 px-4 text-gray-900">
+                        {app.last_name}
                       </td>
                       <td className="py-3 px-4 text-gray-600 font-mono text-sm">
                         {app.email || "-"}

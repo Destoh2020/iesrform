@@ -23,8 +23,15 @@ export default function AdminLogin() {
       // Try to fetch applications to verify password
       await applicationsApi.getAll();
       router.push("/admin");
-    } catch {
-      setError("Invalid password");
+    } catch (err: any) {
+      console.error("Login error:", err);
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        setError("Invalid password");
+      } else if (err.code === "ERR_NETWORK") {
+        setError("Network error - cannot connect to server");
+      } else {
+        setError(err.message || "An error occurred");
+      }
       sessionStorage.removeItem("adminPassword");
     } finally {
       setLoading(false);

@@ -123,7 +123,8 @@ def export_applications_csv(
     writer.writerow([
         "Application ID", 
         "Staff Number", 
-        "Applicant Name", 
+        "First Name",
+        "Last Name",
         "Designation", 
         "Division", 
         "Course Name", 
@@ -137,7 +138,8 @@ def export_applications_csv(
         writer.writerow([
             app.id,
             app.staff_number,
-            app.applicant_name,
+            app.first_name,
+            app.last_name,
             app.designation,
             app.division,
             app.course.name if app.course else "Unknown",
